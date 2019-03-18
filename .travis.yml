@@ -2,4 +2,4 @@ language: python
 python:
   - "2.7"
 script:
-  - pytest
+  - for d in $(ls -d1 *); do pushd $d; pytest; popd; done
